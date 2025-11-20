@@ -1,0 +1,157 @@
+/* style.css - Seção de Navegação Melhorada */
+
+/* Remove a margem padrão do body para o cabeçalho ocupar a largura total */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* Essencial para o nav ficar colado no topo */
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+/* O contêiner da barra de navegação */
+nav {
+    background-color: #007bff; /* Azul vibrante */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    padding: 0 20px;
+}
+
+/* A lista de links */
+nav ul {
+    list-style: none; /* REMOVE OS MARCADORES (PONTOS) */
+    padding: 0;
+    margin: 0;
+    display: flex; /* DEIXA OS ITENS HORIZONTAIS */
+    justify-content: flex-start; /* Alinha os links à esquerda */
+    align-items: center;
+}
+
+/* Os itens da lista (links) */
+nav ul li {
+    /* Não precisa de muito estilo aqui, o estilo vai para o <a> */
+}
+
+/* Os links em si */
+nav ul li a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none; /* REMOVE O SUBLINHADO */
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    text-transform: uppercase; /* Deixa o texto em maiúsculo */
+    letter-spacing: 0.5px;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+/* --- Estilos para o Main Content (Mantidos) --- */
+
+.container {
+    max-width: 1200px;
+    margin: 30px auto; /* Afasta o conteúdo do cabeçalho */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* style.css - NOVO E MELHOR ESTILO PARA A BARRA DE CADASTRO */
+
+/* --- Estilização do Formulário Geral --- */
+#cadastroForm {
+    /* Usa Grid para organizar os campos em colunas responsivas */
+    display: grid; 
+    /* Define colunas que se ajustam automaticamente, garantindo um mínimo de 200px de largura para cada campo */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; /* Espaçamento entre os campos (células da grid) */
+    padding-top: 15px;
+}
+
+/* Aplica display: block para que a label ocupe sua própria linha dentro da célula da grid */
+#cadastroForm label {
+    display: block; 
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase; /* Deixa a label em caixa alta para maior clareza */
+    font-size: 0.85em;
+}
+
+#cadastroForm input,
+#cadastroForm select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    transition: border-color 0.3s;
+}
+
+#cadastroForm input:focus,
+#cadastroForm select:focus {
+    border-color: #007bff; /* Fica azul ao focar para feedback visual */
+    outline: none;
+}
+
+/* --- Estilização do Botão de Cadastro --- */
+#cadastroForm button[type="submit"] {
+    /* Faz o botão ocupar a largura total da linha, abaixo de todos os campos */
+    grid-column: 1 / -1; 
+    
+    background-color: #28a745; /* Verde */
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+#cadastroForm button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; 
+    z-index: 1000; /* Fica por cima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Fundo escuro */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Centraliza verticalmente e horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+

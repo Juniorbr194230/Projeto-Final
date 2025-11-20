@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cadastros</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">🏠 Principal</a></li>
+            <li><a href="cadastrar.html">➕ Cadastrar Novo</a></li>
+            <li><a href="cadastros.html">📚 Ver Registros</a></li>
+        </ul>
+    </nav>
+
+    <div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="document.getElementById('editModal').style.display='none'">&times;</span>
+        <h2>Editar Registro</h2>
+        <form id="editForm">
+            <input type="hidden" id="edit-id" name="id">
+
+            <label for="edit-tipo">Tipo:</label>
+            <select id="edit-tipo" name="tipo" required>
+                <option value="aluno">Aluno</option>
+                <option value="funcionario">Funcionário</option>
+                <option value="produto">Produto</option>
+            </select>
+
+            <label for="edit-nome">Nome:</label>
+            <input type="text" id="edit-nome" name="nome" required>
+
+            <label for="edit-cpf">CPF:</label>
+            <input type="text" id="edit-cpf" name="cpf" required>
+
+            <label for="edit-telefone">Telefone:</label>
+            <input type="text" id="edit-telefone" name="telefone" required>
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </div>
+</div>
+
+    <main class="container">
+        <h2>Registros Existentes (Deletar e Atualizar)</h2>
+        <p>Nesta seção você pode visualizar todos os dados salvos no PostgreSQL e usar o botão "Deletar".</p>
+        
+        <ul id="listaRegistros" class="registro-list"></ul>
+        <script src="script.js"></script>
+            </ul>
+        
+    </main>
+
+    <script src="script.js"></script> 
+</body>
+</html>
